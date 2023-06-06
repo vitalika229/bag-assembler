@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-const constContent = {
+const data1 = {
   placeOfLiving: 'Moscow', sex: 'male', age: 20, citizenship: 'russian', religion: 'atheist', countryStart: 'russian', countryEnd: 'usa', child: { age: 13 },
 };
-const content = {
+const data2 = {
   tripDuration: 10, startCity: 'Moscow', endCity: 'London', health: 'healthy', weather: { feelslike: 13, weatherDescriptions: 'дождливо' },
 };
 
@@ -55,4 +55,4 @@ const algorithm = (constContent, content) => {
 
   console.log(recommendedItems);
 };
-algorithm(constContent, content);
+algorithm(data1, data2);

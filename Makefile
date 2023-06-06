@@ -15,4 +15,6 @@ lint:
 	npx eslint .
 
 fix-lint:
-	npx eslint --fix .
+	npx prettier --write front/index.html
+	npx prettier --write front/styles.css
+	npx eslint --fix .  

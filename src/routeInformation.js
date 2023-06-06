@@ -13,8 +13,8 @@ const routeInformation = async () => {
 
   const result = await fetch(`${link}&query=${capitalizeCities[1]}`);
   const data = await result.json();
-  const { temperature } = data.current;
-  const weatherDescriptions = data.current.weather_descriptions.join(', ');
+  // const { temperature } = data.current;
+  // const weatherDescriptions = data.current.weather_descriptions.join(', ');
 
   rl.close();
 

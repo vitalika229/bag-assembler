@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Регистрация</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="section section-top">
-      <div class="header">
-        <h1>Наша Компания</h1>
-        <p>Приложение, которое поможет собрать багаж специально для вас!</p>
+  <head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="section section-top">
+        <div class="header">
+          <h1>Наша Компания</h1>
+          <p>Приложение, которое поможет собрать багаж специально для вас!</p>
+        </div>
+      </div>
+
+      <div class="section section-middle">
+        <div class="registration-form">
+          <h2>Регистрация</h2>
+          <form id="registration-form">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required />
+          </form>
+        </div>
+      </div>
+
+      <div class="section section-bottom">
+        <div class="personalization">
+          <h2>Опрос - Персонализация</h2>
+          <form id="personalization-form">
+            <label for="days"
+              >Продолжительность поездки (количество дней):</label
+            >
+            <input type="text" id="days" name="days" required />
+
+            <label for="cities">Город:</label>
+            <input type="text" id="cities" name="cities" required />
+
+            <label for="health">Здоровье:</label>
+            <input type="text" id="health" name="health" required />
+
+            <label for="children">Берете ли вы с собой детей?</label>
+            <input type="text" id="children" name="children" required />
+
+            <label for="pets">А питомцев?</label>
+            <input type="text" id="pets" name="pets" required />
+
+            <label for="accommodation">Тип размещения во время поездки:</label>
+            <input
+              type="text"
+              id="accommodation"
+              name="accommodation"
+              required
+            />
+
+            <button type="submit" class="btn">Отправить</button>
+          </form>
+        </div>
       </div>
     </div>
-
-    <div class="section section-middle">
-      <div class="registration-form">
-        <h2>Регистрация</h2>
-        <form id="registration-form">
-          <label for="name">Имя:</label>
-          <input type="text" id="name" name="name" required>
-        </form>
-      </div>
-    </div>
-
-    <div class="section section-bottom">
-      <div class="personalization">
-        <h2>Опрос - Персонализация</h2>
-        <form id="personalization-form">
-          <label for="days">Продолжительность поездки (количество дней):</label>
-          <input type="text" id="days" name="days" required>
-
-          <label for="cities">Город:</label>
-          <input type="text" id="cities" name="cities" required>
-
-          <label for="health">Здоровье:</label>
-          <input type="text" id="health" name="health" required>
-
-          <label for="children">Берете ли вы с собой детей?</label>
-          <input type="text" id="children" name="children" required>
-
-          <label for="pets">А питомцев?</label>
-          <input type="text" id="pets" name="pets" required>
-
-          <label for="accommodation">Тип размещения во время поездки:</label>
-          <input type="text" id="accommodation" name="accommodation" required>
-
-          <button type="submit" class="btn">Отправить</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

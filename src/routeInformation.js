@@ -1,6 +1,6 @@
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-import _ from 'lodash';
+
 
 const routeInformation = async () => {
   const rl = readline.createInterface({ input, output });

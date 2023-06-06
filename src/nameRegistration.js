@@ -10,3 +10,4 @@ const reg = async () => {
 
   rl.close();
 };
+export default reg;

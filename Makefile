@@ -9,6 +9,7 @@ run:
 reboot-dir-users:
 	rm -rf ./src/users
 	mkdir ./src/users
+	touch ./src/users/defaultFile.json
 
 lint:
 	npx eslint .

@@ -1,4 +1,4 @@
-import * as readline from 'node:readline/promises';
+import * as readline from 'node:readline/promises'; // eslint-disable-line
 import { stdin as input, stdout as output } from 'node:process';
 
 const reg = async () => {
@@ -9,4 +9,6 @@ const reg = async () => {
   console.log(`Спасибо за регистрацию, ${answer}!`);
 
   rl.close();
+  return answer;
 };
+export default reg;

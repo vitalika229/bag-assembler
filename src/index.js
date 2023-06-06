@@ -1,7 +1,7 @@
-import { readFile } from 'node:fs/promises';
+import wf from './writeFile.js';
+import reg from './nameRegistration.js';
 
 export default async () => {
-  const filePath = new URL('./user.json', import.meta.url);
-  const contents = await readFile(filePath, { encoding: 'utf8' });
-  console.log(contents);
+  const data = await reg();
+  wf('./users/user2.json', data);
 };

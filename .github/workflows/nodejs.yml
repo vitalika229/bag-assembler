@@ -1,19 +1,18 @@
 name: Node CI
 
-on:
-  - push
+ on:
+   - push
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+ jobs:
+   build:
+     runs-on: ubuntu-latest
 
-    steps:
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-          cache: 'npm'
-      - name: Install dependencies
-        run: make install
-      - name: Lint code
-        run: make lint
+     steps:
+       - uses: actions/checkout@v2
+       - name: SetUp node.js
+         uses: actions/setup-node@v1
+         with:
+           node-version: '16.x'
+           cache: npm
+       - run: make install
+       - run: make lint

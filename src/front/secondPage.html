@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <title>Регистрация</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Регистрация</h1>
+    <form id="registrationForm">
+      <label for="username">Имя пользователя:</label>
+      <input type="text" id="username" required />
+      <br />
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </body>
+</html>
+",secondPage.html:"<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,9 +30,7 @@
             <div class="personalization">
               <h2>Опрос - Персонализация</h2>
               <form id="personalization-form">
-                <label for="days"
-                  >Продолжительность поездки (количество дней):</label
-                >
+                <label for="days">Продолжительность поездки (количество дней):</label>
                 <input type="text" id="days" name="days" required />
     
                 <label for="cities">Город:</label>
@@ -32,15 +46,15 @@
                 <input type="text" id="pets" name="pets" required />
     
                 <label for="accommodation">Тип размещения во время поездки:</label>
-                <input
-                  type="text"
-                  id="accommodation"
-                  name="accommodation"
-                  required
-                />
+                <input type="text" id="accommodation" name="accommodation" required />
     
                 <button type="submit" class="btn">Отправить</button>
               </form>
             </div>
+          </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

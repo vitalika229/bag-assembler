@@ -14,7 +14,7 @@ app.post('/save-username', (req, res) => {
   const data = { username };
 
   // Сохранение имени пользователя в файл в формате JSON
-  fs.writeFile(`${__dirname}/user.json`, JSON.stringify(data))
+  fs.writeFile(`${__dirname}/../src/users/${username}.json`, JSON.stringify(data))
     .then(() => {
       console.log('Имя пользователя успешно сохранено на сервере.');
       res.sendStatus(200);

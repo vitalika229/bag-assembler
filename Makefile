@@ -6,6 +6,7 @@ run:
 	clear
 	node ./bin/main.js
 
+
 reboot-dir-users:
 	rm -rf ./src/users
 	mkdir ./src/users
@@ -16,5 +17,4 @@ lint:
 
 fix-lint:
 	npx prettier --write front/index.html
-	npx prettier --write front/styles.css
 	npx eslint --fix .  

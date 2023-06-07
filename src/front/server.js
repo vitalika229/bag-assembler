@@ -3,8 +3,8 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs/promises';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url); // eslint-disable-line
+const __dirname = dirname(__filename); // eslint-disable-line
 
 const app = express();
 app.use(express.json());
@@ -14,7 +14,7 @@ app.post('/save-username', (req, res) => {
   const data = { username };
 
   // Сохранение имени пользователя в файл в формате JSON
-  fs.writeFile(`${__dirname}/../src/users/${username}.json`, JSON.stringify(data))
+  fs.writeFile(`${__dirname}/../../database/users/${username}.json`, JSON.stringify(data))
     .then(() => {
       console.log('Имя пользователя успешно сохранено на сервере.');
       res.sendStatus(200);

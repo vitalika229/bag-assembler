@@ -8,13 +8,14 @@ run:
 
 
 reboot-dir-users:
-	rm -rf ./src/users
-	mkdir ./src/users
-	touch ./src/users/defaultFile.json
+	rm -rf ./database/users
+	mkdir ./database/users
+	touch ./database/users/defaultFile.json
 
 lint:
 	npx eslint .
 
 fix-lint:
-	npx prettier --write front/index.html
+	npx prettier --write ./src/front/index.html
+	npx prettier --write ./src/front/styles.css
 	npx eslint --fix .  

@@ -12,8 +12,17 @@ const __dirname = dirname(__filename); // eslint-disable-line
 
 // Сохранение имени пользователя
 app.post('/save-username', (req, res) => {
-  const { username } = req.body;
-  const data = { username };
+  const {
+    name, sex, age, placeLive, citizenship, religion,
+  } = req.body;
+  const data = {
+    name,
+    sex,
+    age,
+    placeLive,
+    citizenship,
+    religion,
+  };
 
   // Сохранение имени пользователя в файл в формате JSON
   fs.writeFile(`${__dirname}/../../database/users/user.json`, JSON.stringify(data))

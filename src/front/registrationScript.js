@@ -1,21 +1,4 @@
 // Код для первой страницы
-window.addEventListener('DOMContentLoaded', () => {
-  const audioPlayer = document.getElementById('audioPlayer');
-  const audioButton = document.getElementById('audioButton');
-
-  audioButton.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
-      audioButton.textContent = 'Выключить аудио';
-    } else {
-      audioPlayer.pause();
-      audioButton.textContent = 'Включить аудио';
-    }
-  });
-
-  audioPlayer.volume = 0.5; // Установите громкость здесь (от 0 до 1)
-});
-
 
 document.getElementById('registrationForm').addEventListener('submit', (event) => {
   event.preventDefault(); // Отменить отправку формы по умолчанию

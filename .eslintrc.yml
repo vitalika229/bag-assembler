@@ -2,14 +2,21 @@ env:
   browser: true
   es2021: true
   node: true
-extends: airbnb-base
-overrides: []
+extends: 
+  - airbnb-base
+  - plugin:jest/recommended
+overrides:
+  - files:
+      - '**/*.test.js'
+      - '**/*.spec.js'
+    env:
+      jest: true
 parserOptions:
   ecmaVersion: latest
   sourceType: module
 rules: 
   no-console: 0
-  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+  import/extensions:
     - error
     - ignorePackages
     - js: always

@@ -3,8 +3,6 @@ import * as readline from 'node:readline/promises'; // eslint-disable-line
 import { stdin as input, stdout as output } from 'node:process';
 import _ from 'lodash'; // eslint-disable-line
 
-const rl = readline.createInterface({ input, output });
-
 export const readFileAsync = async (filePath) => {
   const validFilePath = new URL(filePath, import.meta.url);
   const data = await readFile(validFilePath, { encoding: 'utf8' });
@@ -15,6 +13,8 @@ export const writeFileAsync = async (filePath, data) => {
   const addr = new URL(filePath, import.meta.url);
   await writeFile(addr, data, { encoding: 'utf8' });
 };
+
+const rl = readline.createInterface({ input, output });
 
 export const registration = async () => {
   const answer = await rl.question('Как вас зовут? ');

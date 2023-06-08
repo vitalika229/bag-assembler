@@ -1,12 +1,18 @@
 import _ from 'lodash';
 
-const data1 = {
-  placeOfLiving: 'Moscow', sex: 'male', age: 20, citizenship: 'russian', religion: 'atheist', countryStart: 'russian', countryEnd: 'usa', child: { age: 13 },
-};
-const data2 = {
-  tripDuration: 10, startCity: 'Moscow', endCity: 'London', health: 'healthy', weather: { feelslike: 13, weatherDescriptions: 'дождливо' },
-};
-
+// const data1 = {
+//   placeOfLiving: 'Moscow', sex: 'male', age: 20, citizenship: 'russian', religion: 'atheist', countryStart: 'russian', countryEnd: 'usa', child: { age: 13 },
+// };
+// const data2 = {
+//   tripDuration: 10, startCity: 'Moscow', endCity: 'London', health: 'healthy', weather: { feelslike: 13, weatherDescriptions: 'дождливо' },
+// };
+import {readFileAsync} from './helpers.js'
+const constContent = await readFileAsync('../database/users/personalization.json')
+const content = await readFileAsync('../database/users/user.json')
+console.log(constContent)
+console.log(content)
+// {"days":"10","cities":"dubai","health":"yes","children":"yes","pets":"yes","accommodation":"hotel"}
+// {"name":"Виталий","sex":"male","age":"19","placeLive":"LONDON","citizenship":"qwe","religion":"atheist"}
 const algorithm = (constContent, content) => {
   const compoundObj = _.merge(constContent, content);
   const recommendedItems = [];
@@ -19,7 +25,7 @@ const algorithm = (constContent, content) => {
     recommendedItems.push('Разрешение от родителей');
   }
 
-  if (compoundObj.countryStart !== compoundObj.countryEnd) {
+  if (compoundObj.placeLive !== compoundObj.countryEnd) {
     if (compoundObj.age > 14) {
       recommendedItems.push('паспорт');
     } else {
@@ -27,6 +33,7 @@ const algorithm = (constContent, content) => {
     }
     recommendedItems.push('загранпаспорт');
   }
+
   if (compoundObj.child !== 0) {
     if (compoundObj.child.age < 14) {
       recommendedItems.push('Свидетельство о рождении детей');
@@ -53,6 +60,6 @@ const algorithm = (constContent, content) => {
     }
   }
 
-  console.log(recommendedItems);
+  // console.log(recommendedItems);
 };
-algorithm(data1, data2);
+

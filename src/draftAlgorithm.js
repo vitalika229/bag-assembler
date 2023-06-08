@@ -1,23 +1,8 @@
 import _ from 'lodash';
 
-// const data1 = {
-//   placeOfLiving: 'Moscow', sex: 'male', age: 20, citizenship: 'russian', religion: 'atheist', countryStart: 'russian', countryEnd: 'usa', child: { age: 13 },
-// };
-// const data2 = {
-//   tripDuration: 10, startCity: 'Moscow', endCity: 'London', health: 'healthy', weather: { feelslike: 13, weatherDescriptions: 'дождливо' },
-// };
-import { readFileAsync } from './helpers.js';
-
-const constContent = await readFileAsync('../database/users/personalization.json');
-const content = await readFileAsync('../database/users/user.json');
-console.log(constContent);
-console.log(content);
-// {"days":"10","cities":"dubai","health":"yes","children":"yes","pets":"yes","accommodation":"hotel"}
-// {"name":"Виталий","sex":"male","age":"19","placeLive":"LONDON","citizenship":"qwe","religion":"atheist"}
 const algorithm = (constContent, content) => {
   const compoundObj = _.merge(JSON.parse(constContent), JSON.parse(content));
   const recommendedItems = [];
-  console.log(compoundObj);
   if (Number(compoundObj.days) === 1) {
     recommendedItems.push('powerbank');
   } else if (Number(compoundObj.days) > 1) {
@@ -80,3 +65,4 @@ const algorithm = (constContent, content) => {
 //     recommendedItems.push('легкую одежду');
 //   }
 // }
+export default algorithm;

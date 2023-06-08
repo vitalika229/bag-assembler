@@ -5,10 +5,10 @@ import _ from 'lodash'; // eslint-disable-line
 
 const rl = readline.createInterface({ input, output });
 
-export const readFileAsync = async () => {
-  const filePath = new URL('./user.json', import.meta.url);
-  const contents = await readFile(filePath, { encoding: 'utf8' });
-  console.log(contents);
+export const readFileAsync = async (filePath) => {
+  const validFilePath = new URL(filePath, import.meta.url);
+  const data = await readFile(validFilePath, { encoding: 'utf8' });
+  return data;
 };
 
 export const writeFileAsync = async (filePath, data) => {

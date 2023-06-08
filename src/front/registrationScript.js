@@ -25,4 +25,3 @@ document.getElementById('registrationForm').addEventListener('submit', (event) =
       console.error('Ошибка при отправке запроса:', error);
     });
 });
-

@@ -16,7 +16,7 @@ app.post('/save-username', (req, res) => {
   const data = { username };
 
   // Сохранение имени пользователя в файл в формате JSON
-  fs.writeFile(`${__dirname}/user.json`, JSON.stringify(data))
+  fs.writeFile(`${__dirname}/../../database/users/user.json`, JSON.stringify(data))
     .then(() => {
       console.log('Имя пользователя успешно сохранено на сервере.');
       res.sendStatus(200);
@@ -42,7 +42,7 @@ app.post('/save-personalization', (req, res) => {
   };
 
   // Сохранение информации в файл в формате JSON
-  fs.writeFile(`${__dirname}/personalization.json`, JSON.stringify(data))
+  fs.writeFile(`${__dirname}/../../database/users/personalization.json`, JSON.stringify(data))
     .then(() => {
       console.log('Информация успешно сохранена на сервере.');
       res.sendStatus(200);
